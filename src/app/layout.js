@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Banner from "@/components/Banner";
 import FriendBox from "@/components/FrindBox";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,11 +29,13 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <div>
           <NavBar></NavBar>
-          <Banner/>
-          <FriendBox></FriendBox>
+         
         </div>
 
         <div>  {children}</div>
+        <div>
+          <Footer/>
+        </div>
       </body>
     </html>
   );
