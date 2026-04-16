@@ -1,0 +1,100 @@
+{
+  "friends": [
+    {
+      "id": 1,
+      "name": "Alex Rivera",
+      "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+      "email": "alex.rivera@gmail.com",
+      "days_since_contact": 18,
+      "status": "overdue",
+      "tags": ["college", "close friend"],
+      "bio": "My college roommate and adventure buddy. We used to go hiking every weekend.",
+      "goal": 14,
+      "next_due_date": "2025-04-10"
+    },
+    {
+      "id": 2,
+      "name": "Sarah Chen",
+      "picture": "https://randomuser.me/api/portraits/women/44.jpg",
+      "email": "sarah.chen@outlook.com",
+      "days_since_contact": 5,
+      "status": "on-track",
+      "tags": ["work", "close friend"],
+      "bio": "Met at my first job. She's the friend who always gives the best career advice.",
+      "goal": 21,
+      "next_due_date": "2025-04-25"
+    },
+    {
+      "id": 3,
+      "name": "Marcus Okoro",
+      "picture": "https://randomuser.me/api/portraits/men/51.jpg",
+      "email": "marcus.okoro@yahoo.com",
+      "days_since_contact": 12,
+      "status": "almost due",
+      "tags": ["gym", "childhood"],
+      "bio": "Known him since we were 10. Still my gym partner and the funniest guy I know.",
+      "goal": 14,
+      "next_due_date": "2025-04-18"
+    },
+    {
+      "id": 4,
+      "name": "Elena Vargas",
+      "picture": "https://randomuser.me/api/portraits/women/65.jpg",
+      "email": "elena.vargas@gmail.com",
+      "days_since_contact": 28,
+      "status": "overdue",
+      "tags": ["high school", "travel"],
+      "bio": "High school best friend. We traveled through Europe together after graduation.",
+      "goal": 30,
+      "next_due_date": "2025-04-05"
+    },
+    {
+      "id": 5,
+      "name": "Liam Dubois",
+      "picture": "https://randomuser.me/api/portraits/men/22.jpg",
+      "email": "liam.dubois@proton.me",
+      "days_since_contact": 3,
+      "status": "on-track",
+      "tags": ["music", "new friend"],
+      "bio": "Met at a music festival last year. We bond over indie rock and vinyl records.",
+      "goal": 10,
+      "next_due_date": "2025-04-22"
+    },
+    {
+      "id": 6,
+      "name": "Priya Sharma",
+      "picture": "https://randomuser.me/api/portraits/women/33.jpg",
+      "email": "priya.sharma@icloud.com",
+      "days_since_contact": 9,
+      "status": "almost due",
+      "tags": ["yoga", "neighbor"],
+      "bio": "My yoga instructor who became a close friend. We grab chai after every Sunday class.",
+      "goal": 14,
+      "next_due_date": "2025-04-19"
+    },
+    {
+      "id": 7,
+      "name": "Diego Morales",
+      "picture": "https://randomuser.me/api/portraits/men/68.jpg",
+      "email": "diego.morales@gmail.com",
+      "days_since_contact": 22,
+      "status": "overdue",
+      "tags": ["football", "cousin"],
+      "bio": "My cousin and lifelong friend. We still play pickup football every chance we get.",
+      "goal": 21,
+      "next_due_date": "2025-04-08"
+    },
+    {
+      "id": 8,
+      "name": "Aisha Khan",
+      "picture": "https://randomuser.me/api/portraits/women/22.jpg",
+      "email": "aisha.khan@hotmail.com",
+      "days_since_contact": 7,
+      "status": "on-track",
+      "tags": ["book club", "close friend"],
+      "bio": "Book club friend who turned into my go-to person for deep conversations and book recommendations.",
+      "goal": 14,
+      "next_due_date": "2025-04-23"
+    }
+  ]
+}

@@ -4,6 +4,8 @@ import NavBar from "@/components/NavBar";
 import Banner from "@/components/Banner";
 import FriendBox from "@/components/FrindBox";
 import Footer from "@/components/Footer";
+import { Suspense } from "react";
+import Loading from "./Loading";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +34,9 @@ export default function RootLayout({ children }) {
          
         </div>
 
-        <div>  {children}</div>
+       <Suspense fallback={<Loading></Loading>} >
+         <div>  {children}</div>
+       </Suspense>
         <div>
           <Footer/>
         </div>

@@ -29,7 +29,7 @@ const NavBar = () => {
             TimeLine
           </Link>
           <Link
-            href={"/st"}
+            href={"/statuss"}
             className="text-lg text-gray-500 font-semibold  mr-5 flex gap-1 items-center justify-center"
           >
             <FaChartLine />
