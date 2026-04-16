@@ -1,4 +1,6 @@
+"use client"
 import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
 import React from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { FaChartLine } from "react-icons/fa";
@@ -6,6 +8,8 @@ import { IoMdHome } from "react-icons/io";
 import { MdOutlineAccessTimeFilled } from "react-icons/md";
 
 const NavBar = () => {
+  const pathname=usePathname()
+  console.log("path names   ",pathname)
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="flex-1">

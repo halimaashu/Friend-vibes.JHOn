@@ -1,11 +1,13 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
-import Banner from "@/components/Banner";
-import FriendBox from "@/components/FrindBox";
+
 import Footer from "@/components/Footer";
 import { Suspense } from "react";
 import Loading from "./Loading";
+
+import ContextProvider from "@/provider/ContextProvider";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,14 +33,16 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <div>
           <NavBar></NavBar>
-         
         </div>
 
-       <Suspense fallback={<Loading></Loading>} >
-         <div>  {children}</div>
-       </Suspense>
+        <Suspense fallback={<Loading></Loading>}>
+          <div>
+            <ContextProvider>{children}</ContextProvider>
+          </div>
+        </Suspense>
         <div>
-          <Footer/>
+           <ToastContainer />
+          <Footer />
         </div>
       </body>
     </html>

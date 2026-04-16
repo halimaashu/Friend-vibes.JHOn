@@ -1,14 +1,22 @@
 "use client";
+import { Context } from "@/provider/ContextProvider";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaArchive } from "react-icons/fa";
 import { FaRegMessage } from "react-icons/fa6";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoMdVideocam } from "react-icons/io";
 import { MdDeleteOutline, MdOutlineCircleNotifications } from "react-icons/md";
+import vid from "@/assets/images/video.png"
+import call from "@/assets/images/call.png"
+import text from "@/assets/images/text.png"
+import { toast } from "react-toastify";
+
 
 const FriendPage = () => {
+  const [remember, setRemember] = useContext(Context);
+  console.log(remember);
   const { friendId } = useParams();
   const [friends, setFriends] = useState([]);
   useEffect(() => {
@@ -20,16 +28,17 @@ const FriendPage = () => {
       });
   }, []);
 
-  console.log(friends);
+  // console.log(friends);
 
-  console.log(friendId);
+  // console.log(friendId);
   const exceptedFriend = friends.find(
     (friend) => friend.id === parseInt(friendId),
   );
 
-  console.log("current object", exceptedFriend);
+  // console.log("current object", exceptedFriend);
   return (
     <div className="bg-base-200 grid grid-cols-3 max-w-11/12 mx-auto gap-4 p-4">
+      {/* <Image alt="video image" height={300} width={400} src={vid}></Image> */}
       {/* first par(1) */}
       <div className="col-span-1">
         {/* pRT1 */}
@@ -75,7 +84,7 @@ const FriendPage = () => {
           </div>
           <div className="shadow-lg rounded-lg p-4 ">
             <h1 className="flex gap-2 items-center justify-center text-red-500">
-              <MdDeleteOutline  size={20}/> Delete
+              <MdDeleteOutline size={20} /> Delete
             </h1>
           </div>
         </div>
@@ -120,21 +129,61 @@ const FriendPage = () => {
           <h1>Check in</h1>
           <div className="grid grid-cols-3 gap-6 text-center p-5">
             {/* call */}
-            <div className="bg-base-200 p-5">
+            <div
+              onClick={() =>{
+                toast.success(`you are calling ${exceptedFriend?.name}`);
+
+
+                setRemember([
+                  ...remember,
+                  {
+                    type:"call",
+                    name: `${exceptedFriend?.name}`,
+                    image: call,
+                    time: `${new Date().toLocaleString()}`,
+                  },
+                ])
+              }}
+              className="bg-base-200 p-5"
+            >
               <h1 className="test-2xl font-bold text-green-500 flex justify-center">
                 <FiPhoneCall size={50} />
               </h1>
               <h1 className="mt-5">Call</h1>
             </div>
             {/* massages */}
-            <div className="bg-base-200 p-5">
+            <div
+            onClick={() =>{
+              toast.success(`you are massages naw ${exceptedFriend?.name}`);
+                setRemember([
+                  ...remember,
+                  {
+                    type:"Message",
+                    name: `${exceptedFriend?.name}`,
+                    image: text,
+                    time: `${new Date().toLocaleString()}`,
+                  },
+                ])
+              } }className="bg-base-200 p-5">
               <h1 className="test-2xl font-bold text-gray-500 flex justify-center">
                 <FaRegMessage size={50} />
               </h1>
               <h1 className="mt-5">Messages Me</h1>
             </div>
             {/* video call */}
-            <div className="bg-base-200 p-5">
+            <div
+            onClick={() =>{
+              toast.success(`you are video calling ${exceptedFriend?.name}`);
+                setRemember([
+                  ...remember,
+                  {
+                    type:"Video-call",
+                    name: `${exceptedFriend?.name}`,
+                    image: vid,
+                    time: `${new Date().toLocaleString()}`,
+                  },
+                ])
+              }} className="bg-base-200 p-5">
               <h1 className="test-2xl font-bold text-violet-500 flex justify-center">
                 <IoMdVideocam size={50} />
               </h1>
