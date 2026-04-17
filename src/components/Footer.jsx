@@ -31,9 +31,9 @@ const Footer = () => {
           <FaLinkedin />
         </a>
       </div>
-      <div className="text-xl text-gray-300 flex justify-between p-3 md:px-20  mt-20">
-        <div className=""><h1>© 2026 KeenKeeper. All rights reserved.</h1></div>
-        <div className="flex gap-6">
+      <div className="text-xl text-gray-300 md:flex justify-between p-3 md:px-20  mt-20">
+        <div className="text-center md:flex"><h1>© 2026 KeenKeeper. All rights reserved.</h1></div>
+        <div className="text-center md:flex gap-6 mt-5">
             <p>Privacy Policy</p>
             <p>Terms of Service</p>
             <p>Cookies</p>

@@ -39,10 +39,10 @@ if (!exceptedFriend) {
 }
   // console.log("current object", exceptedFriend);
   return (
-    <div className="bg-base-200 grid grid-cols-3 max-w-11/12 mx-auto gap-4 p-4">
+    <div className="bg-base-200 grid md:grid-cols-3 max-w-11/12 mx-auto gap-4 p-4">
       {/* <Image alt="video image" height={300} width={400} src={vid}></Image> */}
       {/* first par(1) */}
-      <div className="col-span-1">
+      <div className="md:col-span-1">
         {/* pRT1 */}
         <div className="shadow-xl rounded-lg bg-base-100 p-5 text-center flex flex-col items-center space-y-3 ">
           <Image
@@ -93,9 +93,9 @@ if (!exceptedFriend) {
       </div>
 
       {/* right side */}
-      <div className="col-span-2">
+      <div className="md:col-span-2">
         {/* BOX 1*/}
-        <div className="grid grid-cols-3 gap-5 bg-base-100">
+        <div className="grid md:grid-cols-3 gap-5 bg-base-100">
           <div className="text-gray-500 shadow-md rounded-md text-center px-6 py-10">
             <h1 className="text-3xl font-bold">
               {exceptedFriend?.days_since_contact}
@@ -129,7 +129,7 @@ if (!exceptedFriend) {
         {/* box 3 */}
         <div className="shadow-md rounded-md bg-base-100 p-6 mt-5 font-semibold">
           <h1>Check in</h1>
-          <div className="grid grid-cols-3 gap-6 text-center p-5">
+          <div className="grid md:grid-cols-3 gap-6 text-center p-5">
             {/* call */}
             <div
               onClick={() =>{

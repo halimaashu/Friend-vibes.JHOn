@@ -20,7 +20,7 @@ const AllFriend = () => {
     <div>
       <h1 className="text-2xl font-bold">All Friends</h1>
 
-      <div className="grid grid-cols-4 gap-6 ">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 ">
         {friend.map((friend) => (
           <Link  href={`/${friend.id}`}
             key={friend.id}
