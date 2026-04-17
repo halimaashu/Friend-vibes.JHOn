@@ -71,6 +71,7 @@ if (!exceptedFriend) {
           )}
 
           <h1 className="text-gray-500">{exceptedFriend?.bio}</h1>
+          <h1 className="text-gray-500">Email: {exceptedFriend?.email}</h1>
         </div>
         {/* PART1:2 */}
         <div className="bg-base-100 mt-5 space-y-5 text-center font-semibold">

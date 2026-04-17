@@ -15,6 +15,13 @@ const sorted = [...remember].sort((a, b) =>
   setRemember(sorted);
   // console.log(sortArray,"dort array")
 }
+const haldleSort2=()=>{
+const sorted = [...remember].sort((a, b) =>
+   new Date(a.time) - new Date(b.time)
+  );
+  setRemember(sorted);
+  // console.log(sortArray,"dort array")
+}
 console.log(sortType)
   return (
     <div className=" space-y-10 ">
@@ -38,6 +45,9 @@ console.log(sortType)
             >
               <li>
                 <a onClick={haldleSort}>Sort By Title</a>
+              </li>
+              <li>
+                <a onClick={haldleSort2}>Sort By time</a>
               </li>
               
             </ul>
