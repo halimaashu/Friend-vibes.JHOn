@@ -9,7 +9,7 @@ import { MdOutlineAccessTimeFilled } from "react-icons/md";
 
 const NavBar = () => {
   const pathname=usePathname()
-  console.log("path names   ",pathname)
+  // console.log("path names   ",pathname)
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="flex-1">
@@ -20,21 +20,21 @@ const NavBar = () => {
         <div className="menu menu-horizontal  text-center px-1 hidden md:flex md:justify-center md:items-center space-y-3">
           <Link
             href={"/"}
-            className="text-lg text-gray-500 font-semibold  mr-5 flex gap-1 items-center justify-center"
+            className={pathname==="/"?"bg-green-400 text-lg text-white font-semibold  mr-5 flex gap-1 items-center justify-center p-2 rounded-md ":`text-lg text-gray-500 font-semibold  mr-5 flex gap-1 items-center justify-center`}
           >
             <IoMdHome />
             Home
           </Link>
           <Link
             href={"/timeline"}
-            className="text-lg text-gray-500 font-semibold  mr-5 flex gap-1 items-center justify-center"
+            className={pathname==="/timeline"?"bg-green-400 text-lg text-white font-semibold  mr-5 flex gap-1 items-center justify-center p-2 rounded-md ":`text-lg text-gray-500 font-semibold  mr-5 flex gap-1 items-center justify-center`}
           >
             <MdOutlineAccessTimeFilled />
             TimeLine
           </Link>
           <Link
             href={"/statuss"}
-            className="text-lg text-gray-500 font-semibold  mr-5 flex gap-1 items-center justify-center"
+            className={pathname==="/statuss"?"bg-green-400 text-lg text-white font-semibold  mr-5 flex gap-1 items-center justify-center p-2 rounded-md ": `text-lg text-gray-500 font-semibold  mr-5 flex gap-1 items-center justify-center`}
           >
             <FaChartLine />
             Status

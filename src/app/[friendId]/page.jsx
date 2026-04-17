@@ -34,7 +34,9 @@ const FriendPage = () => {
   const exceptedFriend = friends.find(
     (friend) => friend.id === parseInt(friendId),
   );
-
+if (!exceptedFriend) {
+  return <div>Loading...</div>;
+}
   // console.log("current object", exceptedFriend);
   return (
     <div className="bg-base-200 grid grid-cols-3 max-w-11/12 mx-auto gap-4 p-4">

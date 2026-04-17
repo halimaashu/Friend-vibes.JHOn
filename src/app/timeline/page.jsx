@@ -25,8 +25,8 @@ const page = () => {
               className="shadow-lg rounded-lg p-5 bg-base-200 flex gap-5"
             >
               <Image
-                src={log.image}
-                alt={log.name}
+                src={log?.image}
+                alt={log?.name}
                 height={50}
                 width={50}
               ></Image>
