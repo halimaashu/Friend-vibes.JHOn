@@ -74,7 +74,7 @@ const NavBar = () => {
                 TimeLine
               </Link>
               <Link
-                href={"/st"}
+                href={"/statuss"}
                 className="text-lg text-gray-500 font-semibold  "
               >
                 Status

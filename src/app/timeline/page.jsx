@@ -24,9 +24,9 @@ const page = () => {
   return (
     <div className=" space-y-10 ">
       {remember.length === 0 ? (
-        <div className="h-screen flex justify-center items-center">
+        <div className="py-20  flex justify-center items-center">
           {" "}
-          <h1 className="text-4xl font-bold text-red-500 text-center">
+          <h1 className="text-4xl font-bold text-red-500 text-center px-2">
             there is no data!!!!!!!!!!!
           </h1>
         </div>
