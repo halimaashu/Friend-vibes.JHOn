@@ -16,27 +16,34 @@ const StatusPage = ({ isAnimationActive = true }) => {
     { name: "text", value: massageLag.length, fill: "#ef4444" },
     { name: "video", value: videoLag.length, fill: "#73d13d" },
   ];
+  const total=data.reduce((sum ,item)=> sum+item.value,0)
 
   return (
-    <div className="w-full h-[400px]">
-      <ResponsiveContainer>
-        <PieChart>
-          <Pie
-            data={data}
-            dataKey="value"
-            innerRadius={80}
-            outerRadius={120}
-            cornerRadius={10}
-            fill="#ef4444"
-            paddingAngle={5}
-            isAnimationActive={isAnimationActive}
-          />
-          <Tooltip />
-          <Legend />
-        </PieChart>
-      </ResponsiveContainer>
+    <div className="">
+      {total === 0 ? (
+        <h1 className="text-6xl font-bold py-20 text-yellow-500 text-center">no data found here</h1>
+      ) : (
+        <div className="w-full h-[400px]">
+          <ResponsiveContainer>
+            <PieChart>
+              <Pie
+                data={data}
+                dataKey="value"
+                innerRadius={80}
+                outerRadius={120}
+                cornerRadius={10}
+                fill="#ef4444"
+                paddingAngle={5}
+                isAnimationActive={isAnimationActive}
+              />
+              <Tooltip />
+              <Legend />
+            </PieChart>
+          </ResponsiveContainer>
 
-      <RechartsDevtools />
+          <RechartsDevtools />
+        </div>
+      )}
     </div>
   );
 };
