@@ -6,15 +6,15 @@ import { RechartsDevtools } from "@recharts/devtools";
 import { Context } from "@/provider/ContextProvider";
 
 const StatusPage = ({ isAnimationActive = true }) => {
-    const [remember,SetRemember]=useContext(Context)
-    // console.log("dass",remember)
-   const callLag=remember.filter(re=>re.type==="call")
-   const massageLag=remember.filter(re=>re.type==="Message")
-   const videoLag=remember.filter(re=>re.type==="Video-call")
+  const [remember] = useContext(Context);
+
+  const callLag = remember.filter((re) => re.type === "call");
+  const massageLag = remember.filter((re) => re.type === "Message");
+  const videoLag = remember.filter((re) => re.type === "Video-call");
   const data = [
-    { name: "call", value:callLag.length , fill:"#3b82f6" },
-    { name: "text", value: massageLag.length,fill:"#ef4444" },
-    { name: "video", value:videoLag.length,fill:"#73d13d" },
+    { name: "call", value: callLag.length, fill: "#3b82f6" },
+    { name: "text", value: massageLag.length, fill: "#ef4444" },
+    { name: "video", value: videoLag.length, fill: "#73d13d" },
   ];
 
   return (
@@ -28,18 +28,15 @@ const StatusPage = ({ isAnimationActive = true }) => {
             outerRadius={120}
             cornerRadius={10}
             fill="#ef4444"
-           
             paddingAngle={5}
             isAnimationActive={isAnimationActive}
           />
           <Tooltip />
           <Legend />
         </PieChart>
-         
       </ResponsiveContainer>
 
       <RechartsDevtools />
-     
     </div>
   );
 };

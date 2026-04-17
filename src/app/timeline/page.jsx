@@ -2,27 +2,25 @@
 
 import { Context } from "@/provider/ContextProvider";
 import Image from "next/image";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 const page = () => {
   const [remember, setRemember] = useContext(Context);
-    console.log(remember);
-const [sortType,setSortType]=useState("")
-const haldleSort=()=>{
-const sorted = [...remember].sort((a, b) =>
-    a.type.toLowerCase().localeCompare(b.type.toLowerCase())
-  );
-  setRemember(sorted);
-  // console.log(sortArray,"dort array")
-}
-const haldleSort2=()=>{
-const sorted = [...remember].sort((a, b) =>
-   new Date(a.time) - new Date(b.time)
-  );
-  setRemember(sorted);
-  // console.log(sortArray,"dort array")
-}
-console.log(sortType)
+  console.log(remember);
+
+  const haldleSort = () => {
+    const sorted = [...remember].sort((a, b) =>
+      a.type.toLowerCase().localeCompare(b.type.toLowerCase()),
+    );
+    setRemember(sorted);
+    // console.log(sortArray,"dort array")
+  };
+  const handleSort2 = () => {
+    const sorted = [...remember].sort((a, b) => a.type.localeCompare(b.type));
+
+    setRemember(sorted);
+  };
+
   return (
     <div className=" space-y-10 ">
       {remember.length === 0 ? (
@@ -47,9 +45,8 @@ console.log(sortType)
                 <a onClick={haldleSort}>Sort By Title</a>
               </li>
               <li>
-                <a onClick={haldleSort2}>Sort By time</a>
+                <a onClick={handleSort2}>Sort By time</a>
               </li>
-              
             </ul>
           </div>
           {remember.map((log, index) => (

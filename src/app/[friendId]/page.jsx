@@ -8,11 +8,10 @@ import { FaRegMessage } from "react-icons/fa6";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoMdVideocam } from "react-icons/io";
 import { MdDeleteOutline, MdOutlineCircleNotifications } from "react-icons/md";
-import vid from "@/assets/images/video.png"
-import call from "@/assets/images/call.png"
-import text from "@/assets/images/text.png"
+import vid from "@/assets/images/video.png";
+import call from "@/assets/images/call.png";
+import text from "@/assets/images/text.png";
 import { toast } from "react-toastify";
-
 
 const FriendPage = () => {
   const [remember, setRemember] = useContext(Context);
@@ -20,24 +19,20 @@ const FriendPage = () => {
   const { friendId } = useParams();
   const [friends, setFriends] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/data/friends.json")
+    fetch("/data/friends.json")
       .then((res) => res.json())
       .then((data) => {
         setFriends(data.friends);
-        // console.log(data)
       });
   }, []);
 
-  // console.log(friends);
-
-  // console.log(friendId);
   const exceptedFriend = friends.find(
     (friend) => friend.id === parseInt(friendId),
   );
-if (!exceptedFriend) {
-  return <div>Loading...</div>;
-}
-  // console.log("current object", exceptedFriend);
+  if (!exceptedFriend) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="bg-base-200 grid md:grid-cols-3 max-w-11/12 mx-auto gap-4 p-4">
       {/* <Image alt="video image" height={300} width={400} src={vid}></Image> */}
@@ -133,19 +128,18 @@ if (!exceptedFriend) {
           <div className="grid md:grid-cols-3 gap-6 text-center p-5">
             {/* call */}
             <div
-              onClick={() =>{
+              onClick={() => {
                 toast.success(`you are calling ${exceptedFriend?.name}`);
-
 
                 setRemember([
                   ...remember,
                   {
-                    type:"call",
+                    type: "call",
                     name: `${exceptedFriend?.name}`,
                     image: call,
                     time: `${new Date().toLocaleString()}`,
                   },
-                ])
+                ]);
               }}
               className="bg-base-200 p-5"
             >
@@ -156,18 +150,20 @@ if (!exceptedFriend) {
             </div>
             {/* massages */}
             <div
-            onClick={() =>{
-              toast.success(`you are massages naw ${exceptedFriend?.name}`);
+              onClick={() => {
+                toast.success(`you are massages naw ${exceptedFriend?.name}`);
                 setRemember([
                   ...remember,
                   {
-                    type:"Message",
+                    type: "Message",
                     name: `${exceptedFriend?.name}`,
                     image: text,
                     time: `${new Date().toLocaleString()}`,
                   },
-                ])
-              } }className="bg-base-200 p-5">
+                ]);
+              }}
+              className="bg-base-200 p-5"
+            >
               <h1 className="test-2xl font-bold text-gray-500 flex justify-center">
                 <FaRegMessage size={50} />
               </h1>
@@ -175,18 +171,20 @@ if (!exceptedFriend) {
             </div>
             {/* video call */}
             <div
-            onClick={() =>{
-              toast.success(`you are video calling ${exceptedFriend?.name}`);
+              onClick={() => {
+                toast.success(`you are video calling ${exceptedFriend?.name}`);
                 setRemember([
                   ...remember,
                   {
-                    type:"Video-call",
+                    type: "Video-call",
                     name: `${exceptedFriend?.name}`,
                     image: vid,
                     time: `${new Date().toLocaleString()}`,
                   },
-                ])
-              }} className="bg-base-200 p-5">
+                ]);
+              }}
+              className="bg-base-200 p-5"
+            >
               <h1 className="test-2xl font-bold text-violet-500 flex justify-center">
                 <IoMdVideocam size={50} />
               </h1>

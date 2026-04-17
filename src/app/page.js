@@ -7,11 +7,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="max-w-11/12 mx-auto">
-    
-    <Banner/>
-    <FriendBox/>
-    <AllFriend/>
-
+      <Banner />
+      <FriendBox />
+      <AllFriend />
     </div>
   );
 }
